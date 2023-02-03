@@ -54,7 +54,7 @@ public class DepartmentController {
 	
 	@GetMapping("/organization/{organizationId}")
 	public List<Department> findByOrganization(@PathVariable("organizationId") String organizationId) {
-		LOGGER.info("Department find: organizationId={}", organizationId);
+		LOGGER.info("Department find: path={} organizationId={}", "/organisation/"+organizationId, organizationId);
 		return repository.findByOrganizationId(organizationId);
 	}
 	

@@ -17,4 +17,5 @@ WORKDIR /app
 COPY --from=builder /app .
 
 EXPOSE 9555
-ENTRYPOINT ["java", "-jar", "./build/libs/departmentservice-1.0.jar"]
+# ENTRYPOINT ["java", "-jar", "./build/libs/departmentservice-1.0.jar"]
+ENTRYPOINT ["java", "-javaagent:./src/departmentservice/src/main/java/com/example/departmentservice/agent/opentelemetry-javaagent.jar", "-jar", "./build/libs/departmentservice-1.0.jar"]
